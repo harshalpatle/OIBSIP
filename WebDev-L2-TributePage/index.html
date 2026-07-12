@@ -1,1 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A tribute page to Marie Curie — pioneering physicist and chemist, first woman to win a Nobel Prize, and the only person to win Nobel Prizes in two different sciences.">
+<meta name="theme-color" content="#10161f">
+<title>Marie Curie — A Tribute</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2310161f'/%3E%3Ctext x='50' y='62' font-size='46' text-anchor='middle' fill='%239fedc7' font-family='monospace'%3ERa%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Fills left-to-right as the reader scrolls through the page -->
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <!-- Section dot-nav (desktop only; hidden on small screens to avoid clutter) -->
+  <nav class="dot-nav" aria-label="Page sections">
+    <a href="#top" class="dot-nav__dot" data-section="top" aria-label="Hero"></a>
+    <a href="#quote" class="dot-nav__dot" data-section="quote" aria-label="Quote"></a>
+    <a href="#admire" class="dot-nav__dot" data-section="admire" aria-label="What I admire"></a>
+    <a href="#timeline" class="dot-nav__dot" data-section="timeline" aria-label="Timeline"></a>
+    <a href="#gallery" class="dot-nav__dot" data-section="gallery" aria-label="Gallery"></a>
+    <a href="#legacy" class="dot-nav__dot" data-section="legacy" aria-label="Legacy"></a>
+  </nav>
+
+  <div class="glow-field" aria-hidden="true"></div>
+
+  <main id="main">
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <button class="element-card" id="elementCard" aria-expanded="false" aria-controls="elementFact">
+      <span class="element-number">88</span>
+      <span class="element-symbol">Ra</span>
+      <span class="element-name">Radium</span>
+      <span class="element-fact" id="elementFact" role="status">
+        Radium glows pale blue-green in the dark from its own radioactivity —
+        Curie kept vials of it by her bed to read by.
+      </span>
+    </button>
+
+    <p class="eyebrow">A tribute to</p>
+    <h1 class="hero-title">Marie<br>Curie</h1>
+    <p class="hero-dates">7 NOV 1867 — 4 JUL 1934</p>
+    <p class="hero-tagline">She discovered two elements, won two Nobel Prizes in two
+      different sciences, and did it all in a language and a country that were not
+      her own — while being told, at every turn, that she couldn't.</p>
+  </header>
+
+  <!-- PULL QUOTE -->
+  <section class="quote-section" id="quote">
+    <blockquote class="quote-card">
+      <p>"Nothing in life is to be feared, it is only to be understood.
+        Now is the time to understand more, so that we may fear less."</p>
+      <cite>— Marie Curie</cite>
+    </blockquote>
+  </section>
+
+  <!-- WHY I ADMIRE HER -->
+  <section class="admire" id="admire">
+    <h2 class="section-title">What I admire</h2>
+    <div class="admire-grid">
+      <article class="admire-item">
+
+        <span class="admire-mark">Persistence</span>
+        <p>She was refused a place at university in Kraków simply for being a woman,
+          so she studied in secret at Warsaw's underground "Flying University" instead.
+          When Paris finally let her in, she taught herself to live on bread and tea
+          so she could keep affording her classes. Obstacles never seemed to change
+          her direction, only her patience.</p>
+      </article>
+      <article class="admire-item">
+        <span class="admire-mark">Precision</span>
+        <p>To prove radium existed, she processed tonnes of pitchblende ore by hand
+          in a leaking shed, stirring vats with an iron rod nearly as tall as she
+          was, for years, to isolate a fraction of a gram. That kind of patience
+          with matter, refusing to accept "probably" when "exactly" was possible,
+          is a discipline I find genuinely humbling.</p>
+      </article>
+      <article class="admire-item">
+        <span class="admire-mark">Generosity</span>
+        <p>She refused to patent the radium isolation process, insisting the
+          discovery belonged to everyone, not to her. During the First World War
+          she personally drove X-ray equipment to the front lines. She gave away
+          most of her prize money. Her instinct, again and again, was to hand the
+          discovery outward rather than hold it close.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section" id="timeline">
+    <h2 class="section-title">The shape of a life</h2>
+    <ol class="timeline">
+      <li class="timeline-item">
+        <span class="timeline-date">1891</span>
+        <div class="timeline-body">
+          <h3>Arrives in Paris</h3>
+          <p>Aged 24, she leaves Warsaw to study physics, chemistry, and
+            mathematics at the Sorbonne, living alone in a Latin Quarter garret.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">1895</span>
+        <div class="timeline-body">
+          <h3>Marries Pierre Curie</h3>
+          <p>She marries in a plain dark-blue outfit rather than a wedding
+            gown — a dress practical enough to wear in the lab for years afterward.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">1898</span>
+        <div class="timeline-body">
+          <h3>Discovers polonium and radium</h3>
+          <p>Working from a converted shed, she and Pierre announce two new
+            elements. She names the first after her native Poland.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">1903</span>
+        <div class="timeline-body">
+          <h3>First Nobel Prize</h3>
+          <p>Shared with Pierre and Henri Becquerel in Physics — she becomes
+            the first woman ever to receive a Nobel Prize.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">1906</span>
+        <div class="timeline-body">
+          <h3>Continues alone</h3>
+          <p>After Pierre's sudden death, she takes over his chair at the
+            Sorbonne — its first female professor in over 650 years.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">1911</span>
+        <div class="timeline-body">
+          <h3>Second Nobel Prize</h3>
+          <p>Awarded the Chemistry prize alone, for isolating pure radium —
+            still the only person to win Nobels in two different sciences.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">1914–18</span>
+        <div class="timeline-body">
+          <h3>"Little Curies"</h3>
+          <p>She designs mobile X-ray units and drives them to the front
+            herself, helping treat over a million wounded soldiers.</p>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-date">1934</span>
+        <div class="timeline-body">
+          <h3>Passes away</h3>
+          <p>She dies from aplastic anaemia, almost certainly from decades
+            of unshielded exposure to the very radiation she uncovered.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <h2 class="section-title">In the lab</h2>
+    <figure class="gallery-figure gallery-figure--large">
+      <button class="gallery-figure__btn" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Pierre_and_Marie_Curie.jpg" aria-label="View larger image">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pierre_and_Marie_Curie.jpg"
+             alt="Pierre and Marie Curie working together in their laboratory" loading="lazy">
+      </button>
+      <figcaption>Pierre and Marie in their laboratory, working side by side
+        long before "collaboration" was a word applied to married couples in science.</figcaption>
+    </figure>
+    <div class="gallery-row">
+      <figure class="gallery-figure">
+        <button class="gallery-figure__btn" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Marie_Curie_c1920.png" aria-label="View larger image">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Marie_Curie_c1920.png"
+               alt="Portrait of Marie Curie around 1920" loading="lazy">
+        </button>
+        <figcaption>Marie Curie, c. 1920 — by then a two-time Nobel laureate
+          and director of her own institute.</figcaption>
+      </figure>
+      <figure class="gallery-figure">
+        <button class="gallery-figure__btn" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Marie_Curie_1903.jpg" aria-label="View larger image">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Marie_Curie_1903.jpg"
+               alt="Portrait of Marie Curie in 1903" loading="lazy">
+        </button>
+        <figcaption>The year of her first Nobel Prize — 1903.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- LEGACY / CLOSE -->
+  <section class="legacy" id="legacy">
+    <div class="legacy-glow" aria-hidden="true"></div>
+    <h2 class="legacy-title">The glow she left behind</h2>
+    <p class="legacy-text">Her notebooks are still radioactive. They're kept in
+      lead-lined boxes today, and anyone who wants to read them has to sign a
+      waiver and put on protective clothing first. There's something fitting
+      about that — a century later, her work still asks something of the people
+      who come near it. That's the kind of legacy I hope to leave behind in
+      whatever small way I can: something that still has weight, long after I'm gone.</p>
+    <p class="legacy-signoff">With admiration,<br><span>a fan of radioactive notebooks</span></p>
+  </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Built as a tribute page project · Facts drawn from Wikipedia,
+      Britannica, and the Nobel Prize archives.</p>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- Lightbox for gallery images -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close image">✕</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
