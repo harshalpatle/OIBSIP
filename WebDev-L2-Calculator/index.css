@@ -1,0 +1,174 @@
+
+
+:root {
+  --bg-outer: #4f83b8;
+  --card-bg: #eaf3fc;
+  --display-bg: #d2e6fb;
+  --key-light: #dcebfc;
+  --key-mid: #bfdaf6;
+  --key-mid-hover: #acccf0;
+  --key-dark: #4a76a8;
+  --key-dark-hover: #3e668f;
+  --clear-bg: #7fa9d6;
+  --clear-hover: #6e98c6;
+  --text-dark: #1e3a5c;
+  --text-white: #ffffff;
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-outer);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.calculator {
+  width: 360px;
+  background: var(--card-bg);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.display {
+  background: var(--display-bg);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  margin-bottom: 20px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.display-expression {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--key-dark);
+  min-height: 20px;
+  white-space: nowrap;
+  overflow-x: auto;
+  text-align: left;
+  scrollbar-width: none;      /* Firefox: hide scrollbar + its arrows */
+  -ms-overflow-style: none;   /* old Edge/IE */
+}
+
+.display-result {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 8px;
+  white-space: nowrap;
+  overflow-x: auto;
+  line-height: 1.1;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.display-expression::-webkit-scrollbar,
+.display-result::-webkit-scrollbar {
+  display: none;              /* Chrome/Safari/Edge: hide scrollbar + arrows */
+}
+
+.display-result.error {
+  color: #b33a3a;
+  font-size: 22px;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+button.key {
+  border: none;
+  outline: none;
+  border-radius: var(--radius);
+  background: var(--key-light);
+  color: var(--text-dark);
+  font-size: 22px;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.05s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button.key:hover { background: #cde2fa; }
+button.key:active { transform: scale(0.95); }
+
+button.key.operator,
+button.key.util {
+  background: var(--key-mid);
+}
+button.key.operator:hover,
+button.key.util:hover { background: var(--key-mid-hover); }
+
+button.key.clear {
+  background: var(--clear-bg);
+  color: var(--text-white);
+}
+button.key.clear:hover { background: var(--clear-hover); }
+
+button.key.equals {
+  background: var(--key-dark);
+  color: var(--text-white);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+button.key.equals:hover { background: var(--key-dark-hover); }
+
+/* ---------- Responsive breakpoints ---------- */
+
+/* Large desktop / big monitors: give it a little more room to breathe */
+@media (min-width: 1200px) {
+  .calculator { width: 400px; padding: 28px; }
+  .display-result { font-size: 46px; }
+  button.key { font-size: 24px; padding: 22px 0; }
+}
+
+/* Tablets (portrait) */
+@media (max-width: 768px) {
+  .calculator { width: 380px; padding: 22px; }
+  .display-result { font-size: 40px; }
+  button.key { font-size: 21px; padding: 18px 0; }
+}
+
+/* Large phones */
+@media (max-width: 480px) {
+  body { padding: 16px; }
+  .calculator { width: 100%; max-width: 360px; padding: 18px; border-radius: 24px; }
+  .display { padding: 18px 16px; margin-bottom: 16px; }
+  .display-result { font-size: 34px; }
+  .display-expression { font-size: 14px; }
+  .keys { gap: 10px; }
+  button.key { font-size: 19px; padding: 16px 0; border-radius: 12px; }
+}
+
+/* Small phones */
+@media (max-width: 360px) {
+  .calculator { padding: 14px; border-radius: 20px; }
+  .display { padding: 14px 12px; }
+  .display-result { font-size: 28px; }
+  .keys { gap: 8px; }
+  button.key { font-size: 17px; padding: 14px 0; }
+  button.key.equals { font-size: 15px; }
+}
+
+/* Short viewports (landscape phones) */
+@media (max-height: 500px) {
+  body { align-items: flex-start; }
+  .calculator { margin-top: 10px; padding: 14px; }
+  .display { padding: 12px 14px; margin-bottom: 10px; }
+  .display-result { font-size: 28px; }
+  .keys { gap: 8px; }
+  button.key { padding: 10px 0; font-size: 16px; }
+}
