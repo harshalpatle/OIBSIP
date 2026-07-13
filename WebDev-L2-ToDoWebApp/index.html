@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="ledger">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daybook — Daily Tasks</title>
+<link rel="stylesheet" href="index.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="page">
+
+  <header class="header">
+    <div class="header-top">
+      <div class="header-titles">
+        <h1 class="title">Daybook</h1>
+        <p class="subtitle">A running ledger of what needs doing, and what's done.</p>
+      </div>
+
+      <div class="header-right">
+        <span class="today" id="todayDate"></span>
+        <div class="theme-switcher" id="themeSwitcher" role="group" aria-label="Choose theme">
+          <!-- theme swatch buttons injected by JS -->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="stats" aria-label="Task summary">
+    <div class="stat-ring-card">
+      <div class="ring-wrap">
+        <svg class="ring" viewBox="0 0 90 90" width="64" height="64">
+          <circle class="ring-track" cx="45" cy="45" r="35" />
+          <circle class="ring-progress" id="ringProgress" cx="45" cy="45" r="35" />
+        </svg>
+        <div class="ring-text">
+          <span class="ring-pct" id="ringPct">0%</span>
+        </div>
+      </div>
+      <span class="ring-label">of today<br>done</span>
+    </div>
+
+    <div class="stat-tile">
+      <span class="stat-num" id="statTotal">0</span>
+      <span class="stat-label">Total tasks</span>
+    </div>
+    <div class="stat-tile">
+      <span class="stat-num" id="statPending">0</span>
+      <span class="stat-label">Pending</span>
+    </div>
+    <div class="stat-tile">
+      <span class="stat-num" id="statCompleted">0</span>
+      <span class="stat-label">Completed</span>
+    </div>
+  </section>
+
+  <form class="add-form" id="addForm">
+    <input
+      type="text"
+      id="taskInput"
+      class="add-input"
+      placeholder="Write today's task…"
+      autocomplete="off"
+      maxlength="140"
+      required
+    >
+    <button type="submit" class="add-btn">
+      <span class="add-btn-plus">+</span> Add task
+    </button>
+  </form>
+
+  <main class="board">
+
+    <section class="column" aria-labelledby="pendingHeading">
+      <div class="column-head">
+        <h2 id="pendingHeading">Pending Tasks</h2>
+        <span class="count" id="pendingCount">0</span>
+      </div>
+      <ul class="task-list" id="pendingList"></ul>
+      <div class="empty-state" id="pendingEmpty">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M4 12h16M4 6h16M4 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <p>Nothing pending. Add a task above to open today's page.</p>
+      </div>
+    </section>
+
+    <section class="column" aria-labelledby="completedHeading">
+      <div class="column-head">
+        <h2 id="completedHeading">Completed Tasks</h2>
+        <span class="count" id="completedCount">0</span>
+      </div>
+      <ul class="task-list" id="completedList"></ul>
+      <div class="empty-state" id="completedEmpty">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p>Nothing closed out yet. Completed tasks get stamped here.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span id="totalSummary">0 tasks total</span>
+  </footer>
+
+</div>
+
+<!-- Task row template -->
+<template id="taskTemplate">
+  <li class="task" data-id="">
+    <button class="check" type="button" aria-label="Mark task complete"></button>
+    <div class="task-body">
+      <p class="task-text"></p>
+      <input class="task-edit-input" type="text" maxlength="140">
+      <div class="task-meta">
+        <span class="meta-item added-meta"></span>
+        <span class="meta-item completed-meta"></span>
+      </div>
+    </div>
+    <div class="task-actions">
+      <button class="icon-btn edit-btn" type="button" aria-label="Edit task">Edit</button>
+      <button class="icon-btn save-btn" type="button" aria-label="Save task">Save</button>
+      <button class="icon-btn delete-btn" type="button" aria-label="Delete task">Delete</button>
+    </div>
+  </li>
+</template>
+
+<script src="index.js"></script>
+</body>
+</html>
