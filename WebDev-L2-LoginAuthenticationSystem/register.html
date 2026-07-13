@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create account — Vaultline</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="auth-scene">
+    <main class="auth-card" role="main">
+
+      <div class="auth-logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="4" y="10.5" width="16" height="10" rx="1.5"/>
+          <path d="M7.5 10.5V7.2a4.5 4.5 0 0 1 9 0v3.3"/>
+        </svg>
+      </div>
+
+      <div class="auth-head">
+        <h1>Create your account</h1>
+        <p>Takes less than a minute. No email required for this demo.</p>
+      </div>
+
+      <div class="banner" id="banner" role="alert" hidden></div>
+
+      <form id="registerForm" class="auth-form" novalidate>
+        <label class="field">
+          <span class="field-label">Username</span>
+          <input type="text" id="registerUsername" name="username" autocomplete="username" placeholder="Pick a unique username" required minlength="3">
+          <span class="field-error" data-for="registerUsername"></span>
+        </label>
+
+        <label class="field">
+          <span class="field-label">Password</span>
+          <div class="password-wrap">
+            <input type="password" id="registerPassword" name="password" autocomplete="new-password" placeholder="At least 8 characters" required minlength="8">
+            <button type="button" class="peek" data-target="registerPassword" aria-label="Show password">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div class="strength-meter" aria-hidden="true">
+            <span class="strength-seg" data-seg="0"></span>
+            <span class="strength-seg" data-seg="1"></span>
+            <span class="strength-seg" data-seg="2"></span>
+            <span class="strength-seg" data-seg="3"></span>
+          </div>
+          <span class="field-hint" id="strengthLabel">Use 8+ characters with a mix of letters, numbers &amp; symbols</span>
+          <span class="field-error" data-for="registerPassword"></span>
+        </label>
+
+        <label class="field">
+          <span class="field-label">Confirm password</span>
+          <input type="password" id="registerConfirm" name="confirm" autocomplete="new-password" placeholder="Re-enter password" required>
+          <span class="field-error" data-for="registerConfirm"></span>
+        </label>
+
+        <button type="submit" class="btn-primary" id="registerSubmit">
+          <span class="btn-spinner" aria-hidden="true"></span>
+          <span class="btn-label">Create account</span>
+        </button>
+      </form>
+
+      <p class="auth-footer" style="margin-top:22px;">Already have an account? <a href="index.html">Sign in</a></p>
+    </main>
+  </div>
+
+<script src="storage.js"></script>
+<script src="register.js"></script>
+</body>
+</html>

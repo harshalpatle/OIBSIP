@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Vaultline</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dash-guard" id="dashGuard">
+    <div class="guard-spinner" aria-hidden="true"></div>
+    <p id="guardMessage">Checking session…</p>
+  </div>
+
+  <div class="dash-scene" id="dashScene" hidden>
+
+    <nav class="dash-nav">
+      <div class="dash-brand">
+        <div class="auth-logo" style="margin:0;width:34px;height:34px;" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="4" y="10.5" width="16" height="10" rx="1.5"/>
+            <path d="M7.5 10.5V7.2a4.5 4.5 0 0 1 9 0v3.3"/>
+          </svg>
+        </div>
+        <span class="dash-brand-text">Vaultline</span>
+      </div>
+      <div class="dash-user">
+        <span class="dash-avatar" id="dashAvatar">—</span>
+        <span class="dash-user-name" id="dashUsername">—</span>
+        <button class="btn-ghost" id="logoutBtn">Sign out</button>
+      </div>
+    </nav>
+
+    <main class="dash-main">
+      <section class="dash-hero">
+        <p class="eyebrow">SECURED AREA</p>
+        <h1 id="dashGreeting">Welcome back</h1>
+        <p class="dash-sub">This page only renders once your session token checks out. Sign out or close the tab to lock it again.</p>
+      </section>
+
+      <section class="dash-grid">
+        <article class="dash-card">
+          <p class="dash-card-label">Signed in as</p>
+          <p class="dash-card-value" id="cardUsername">—</p>
+        </article>
+        <article class="dash-card">
+          <p class="dash-card-label">Session started</p>
+          <p class="dash-card-value" id="cardLoginTime">—</p>
+        </article>
+        <article class="dash-card">
+          <p class="dash-card-label">Session token</p>
+          <p class="dash-card-value dash-mono" id="cardToken">—</p>
+        </article>
+        <article class="dash-card">
+          <p class="dash-card-label">Storage scope</p>
+          <p class="dash-card-value" id="cardScope">—</p>
+        </article>
+      </section>
+
+      <section class="dash-note">
+        <p>Session state lives in <code>sessionStorage</code> (or <code>localStorage</code> if "keep me signed in" was checked). Account records stay on this device only — nothing is sent to a server.</p>
+      </section>
+    </main>
+
+  </div>
+
+<script src="storage.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
